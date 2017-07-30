@@ -1,0 +1,31 @@
+
+
+* {
+	font-family: 'Frijole', cursive;
+	font-size: 18px;
+}
+
+strong{
+	font-size: 60px;
+}
+
+
+.input-field input[type=text]:focus {
+     border-bottom: 1px solid #4b1bd1;
+   }
+
+   #video {
+	   margin-left: 100 px;
+   }
+
+   #video {
+	width: 75%;
+}
+
+#eatme {
+  display: inline;
+}
+
+#header {
+  text-align: center;
+}

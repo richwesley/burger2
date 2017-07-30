@@ -1,0 +1,74 @@
+<div class="container-fluid">
+    <div class ="row" id="header">  
+		  <h1>Pacman Devours Jelly Bellys</h1>
+		</div>
+  	<div class ="row">
+	  <div class="col-md-3">
+  				<img src="assets/img/pacman.png" class="img img-responsive" alt="Pacman">
+  	  </div>
+  		
+	  <div class="col-md-6"> 
+	  <video id="video" autoplay loop>
+	  	<source src="assets/img/pacman.mp4">
+	  </video> 
+	  </div>
+		
+	  <div class="col-md-3" id="jellybean">
+			<img src="assets/img/jellybean.jpg" class="img img-responsive" alt="Jelly Belly">
+	  </div>
+		
+	</div>
+  	  
+   <div class="row">
+   	 <div class="col-md-4">
+   	 	<h3>Ready to Devour</h3>         
+        <table class="table table-hover">
+          <tbody>
+            {{#each flavors}}
+            {{#unless this.devoured}}
+              <tr>
+                <td>{{thid.id}}</td>
+                <td>{{this.flavor}}</td>
+                
+                <td><form action="/{{this.id}}?_method=PUT" method="POST">
+                    <input type="hidden" name="devoured" value="true">
+                    <button id="eatme" class="btn btn-primary" type="submit">Eat Me</button>    
+                    </form>
+                 </td>
+              </tr>
+            {{/unless}}
+            {{/each}}
+          </tbody>
+        </table>
+   	 </div>
+   	 
+	 <div class="col-md-4">
+   	 	
+        <form class="create-update-form" action="/" method="POST">
+
+          <div class="form-group">
+            <label for="flavor">Make a New Flavor:</label>
+            <input type="text" id="flavor" name="flavor">
+            <input type="hidden" name="devoured" value="0">
+          </div> 
+
+          <button class="btn btn-primary" type="submit">Add New Jelly Belly</button>
+      </form>   
+   	</div>
+   	 
+   	 <div class="col-md-4">
+   	 	<h3>Devoured</h3>
+        <ul>
+          {{#each flavors}}
+            {{#if this.devoured}}
+              <li>
+                {{this.flavor}}
+              </li>
+            {{/if}}
+          {{/each}}
+        </ul>		
+   	 </div>   	
+   	
+   </div>
+    
+  

@@ -1,0 +1,1 @@
+INSERT INTO flavors (flavor) VALUES ('tree bark');
