@@ -27,7 +27,7 @@ var db = require("./models");
 const routes = require("./routes/bean-routes.js")
 app.use('/', routes)
 const Routes = require("./routes/customer-routes.js")
-app.use('customer', routes)
+app.use('customer', Routes)
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
