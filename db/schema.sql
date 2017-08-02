@@ -1,5 +1,5 @@
-CREATE DATABASE jellybelly
-USE jellybelly
+CREATE DATABASE beaners
+USE beaners
 CREATE TABLE flavors
 (
   id INT NOT NULL AUTO_INCREMENT,

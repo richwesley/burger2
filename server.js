@@ -4,7 +4,7 @@ const methodOverride = require("method-override");
 const path = require("path");
 const app = express();
 const exphbs = require("express-handlebars");
- const port = 3000 || process.env.PORT;
+ 
 const PORT = process.env.PORT || 3000;
 
 
@@ -20,8 +20,20 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 
 app.set("view engine", "handlebars");
 
-var routes = require("./controllers/burger_controller.js");
+var db = require("./models");
 
-app.use("/", routes);
+// Routes
+// =============================================================
+const routes = require("./routes/bean-routes.js")
+app.use('/', routes)
+const Routes = require("./routes/customer-routes.js")
+app.use('customer', routes)
 
-app.listen(PORT);
+// Syncing our sequelize models and then starting our Express app
+// =============================================================
+db.sequelize.sync({ force: false }).then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+      });
+
+});
