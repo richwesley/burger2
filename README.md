@@ -7,3 +7,5 @@
 * MySQL
 * Bootstrap
 * Handlebars.js
+
+[Sequlized MySQL App] (https://whispering-refuge-33002.herokuapp.com/)
